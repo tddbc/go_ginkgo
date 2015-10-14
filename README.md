@@ -21,3 +21,5 @@ http://devtesting.jp/tddbc/
 https://github.com/tddbc
 
 Licensed under the MIT license.
+
+Created by [135yshr](https://github.com/135yshr)
