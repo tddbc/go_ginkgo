@@ -1,7 +1,7 @@
 package go_ginkgo_test
 
 import (
-	. "github.com/tddbc-sendai/go_ginkgo"
+	. "github.com/tddbc/go_ginkgo"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
