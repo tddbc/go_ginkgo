@@ -169,7 +169,7 @@ Test Suite Passed
 
 
 ## License
-Copyright (c) 2015 TDD BaseCamp and other contributors
+Copyright (c) 2015 TDD BootCamp and other contributors
 
 http://devtesting.jp/tddbc/
 
