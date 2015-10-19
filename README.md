@@ -61,47 +61,46 @@ go get github.com/tddbc/go_ginkgo
 1. テスト環境を作る
    _<user>と<project name>は、各自の環境に読み替えてください。_
   
-```bash
-mkdir -p $PATH/src/github.com/<user>/<project name>
-cd $PATH/src/github.com/<user>/<project name>
-ginkgo bootstrap
-ginkgo generate sample 
-```
+   ```bash
+   mkdir -p $PATH/src/github.com/<user>/<project name>
+   cd $PATH/src/github.com/<user>/<project name>
+   ginkgo bootstrap
+   ginkgo generate sample 
+   ```
 
 2. テストケースを書く
 
-```sample_test.go
-package go_ginkgo_test
-
-import (
-	. "github.com/tddbc/go_ginkgo"
-
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-)
-
-var _ = Describe("Sample", func() {
-	Describe("#say", func() {
-		It("Hello TDD BootCampを返すこと", func() {
-			Expect(Say()).To(Equal("Hello TDD BootCamp!!"))
-		})
-	})
-})
-```
+   ```sample_test.go
+   package go_ginkgo_test
+   
+   import (
+       . "github.com/tddbc/go_ginkgo"
+   
+       . "github.com/onsi/ginkgo"
+       . "github.com/onsi/gomega"
+   )
+   
+   var _ = Describe("Sample", func() {
+       Describe("#say", func() {
+           It("Hello TDD BootCampを返すこと", func() {
+               Expect(Say()).To(Equal("Hello TDD BootCamp!!"))
+           })
+       })
+   })
+   ```
 
 3. 実装コードを書く
 
-```sample.go
-package go_ginkgo
-
-func Say() string {
-	return ""
-}
-```
+   ```sample.go
+   package go_ginkgo
+   
+   func Say() string {
+       return ""
+   }
+   ```
 
 4. テストを実行する
-
-```bash
+   ```bash
 $ ginkgo
 ~~~ 詳細略 ~~~
 Summarizing 1 Failure:
@@ -115,21 +114,21 @@ FAIL
 
 Ginkgo ran 1 suite in 6.424s
 Test Suite Failed
-```
+   ```
 
 5. テストが通るコードを書く
 
-```sample.go
-package go_ginkgo
-
-func Say() string {
-	return "Hello TDD BootCamp!!"
-}
-```
+   ```sample.go
+   package go_ginkgo
+   
+   func Say() string {
+       return "Hello TDD BootCamp!!"
+   }
+   ```
 
 6. テストを実行する
 
-```bash
+   ```bash
 $ ginkgo
 Running Suite: GoGinkgo Suite
 =============================
@@ -142,7 +141,7 @@ SUCCESS! -- 1 Passed | 0 Failed | 0 Pending | 0 Skipped PASS
 
 Ginkgo ran 1 suite in 4.917s
 Test Suite Passed
-```
+   ```
 
 ## おまけ
 [ginkgo](http://onsi.github.io/ginkgo/)コマンドは、便利な機能がいくつかあります。
@@ -150,14 +149,21 @@ Test Suite Passed
 
 ### パラメータ
 * watch
+
    ファイルの更新されると自動でテストを実行してくれます。
    テストの度にコマンドを実行するのが面倒な方は、利用するといいかも
+
 * -r
+
    指定したディレクトリの配下のディレクトリを対象にテストを実行します。
    ただし、各ディレクトリで get bootstrap コマンドの実行が必要です。
+
 * -cover
+
    カバレッジを測定します。どのくらい網羅されているかパーセンテージで表示してくれます。
+
 * -notify
+
    OS X と Linux で対応しています。テストが完了するとOSにポップアップを表示してくれます。
    OS Xの場合は、terminal-notifier。Linux の場合は、notify-send　そインストールしておく必要があります。
 
