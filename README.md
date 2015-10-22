@@ -59,11 +59,12 @@ go get github.com/tddbc/go_ginkgo
 
 ## テストの進め方（テンプレートと同じところまで）
 1. テスト環境を作る
-   _<user>と<project name>は、各自の環境に読み替えてください。_
+
+   `<user>`と`<project name>`は、各自の環境に読み替えてください。
   
    ```bash
-   mkdir -p $PATH/src/github.com/<user>/<project name>
-   cd $PATH/src/github.com/<user>/<project name>
+   mkdir -p $GOPATH/src/github.com/<user>/<project name>
+   cd $GOPATH/src/github.com/<user>/<project name>
    ginkgo bootstrap
    ginkgo generate sample 
    ```
